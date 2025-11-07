@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme-stylesheet" rel="stylesheet" href="quiz_white.css">
+    <title>მიმდინარე ტესტი</title>
+</head>
+<body>
+    <button id="theme-button">Change theme</button>
+    <div id="quiz-container">
+        <h2 class="question" id="question"></h2>
+        <div class="options" id="options-container"></div>
+        <button id="next-button">Next</button>
+    </div>
+</body>
+<script src="quiz.js"></script>
+<script type="module">
+    import {checkTheme, changeTheme} from './theme2.js'
+    
+    checkTheme('quiz_white.css', 'quiz.css')
+
+    document.getElementById('theme-button').addEventListener('click', () => {
+        changeTheme('quiz_white.css', 'quiz.css')
+    })
+    
+</script>
+</html>

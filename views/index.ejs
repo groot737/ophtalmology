@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტესტი</title>
+    <link rel="stylesheet" id="theme-stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="theme-button">Change theme</div>
+    </header>
+    <main>
+        <div class="quiz-box">
+            <h1>ოფთალმოლოგიის ტესტი</h1>
+            <h2>ბილეთების ჯამური რაოდენობა: 1023</h2>
+            <form action="" method="post">
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="number" id="start" name="start" required>
+                        <label for="start">-დან</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" id="end" name="end" required>
+                        <label for="end">-მდე</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                      <input type="number" id="quantity" name="quantity" required>
+                      <label for="end">რაოდენობა</label>
+                </div>
+                <div style="display:flex">
+                  <input type="checkbox" id="check" name="check" />
+                <label for='check'>არეული კითხვები</label>
+                </div>
+                <button id="startBtn">დაწყება</button>
+            </form>
+        </div>
+    </main>
+</body>
+<script src="validate.js"></script>
+<script type="module">
+    import {checkTheme, changeTheme} from './theme.js'
+    
+    checkTheme('./style/style_white.css', './style/style.css')
+
+    document.getElementById('theme-button').addEventListener('click', () => {
+        changeTheme('./style/style_white.css', './style/style.css')
+    })
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme-stylesheet" rel="stylesheet" href="./result/result.css">
+    <title>შეცდომები</title>
+</head>
+<body>
+    <header>
+        <button id="theme-button">Change theme</button>
+    </header>
+    <main>
+        <div class="main-box">
+            <% for (let i = 0; i < history.length; i++){ %>
+                <div class="quiz-container" id="quiz1">
+                    <h2 class="question" id="question1"><%= history[i].question %></h2>
+                    <div class="options" id="options-container1">
+    
+                        <% for (let j = 0; j < history[i].answer.length; j++) { %>
+    
+                            <% if (history[i].choosen === history[i].answer[j]) { %>
+    
+                                <div style="background-color: red;" class="option"><%= history[i].answer[j] %></div>
+    
+                            <% } else if (history[i].correct === history[i].answer[j]) { %>
+    
+                                <div style="background-color: green;" class="option"><%= history[i].answer[j] %></div>
+    
+                            <% } else { %>
+    
+                                <div class="option"><%= history[i].answer[j] %></div>
+    
+                            <% } %>
+                            
+                        <% } %>                    
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+<script type="module">
+    import {checkTheme, changeTheme} from './theme.js'
+    
+    checkTheme('./result/result_white.css', './result/result.css')
+
+    document.getElementById('theme-button').addEventListener('click', () => {
+        changeTheme('./result/result_white.css', './result/result.css')
+    })
+</script>
+</html>
