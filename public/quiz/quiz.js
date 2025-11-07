@@ -1,4 +1,4 @@
-const url = "https://ophtalmology-qthui8s5o-groot737s-projects.vercel.app/send-data";
+const url = "https://ophtalmology.vercel.app/send-data";
 let point = 0;
 let history = [];
 const urlParams = new URLSearchParams(window.location.search);

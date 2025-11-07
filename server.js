@@ -11,7 +11,7 @@ app.use(express.json({ limit: '1gb' }))
 app.use(express.urlencoded({ extended: true, limit: '1gb' }))
 app.use(
     cors({
-      origin: '*',
+      origin: 'https://ophtalmology.vercel.app/',
     })
 );
 
